@@ -1,0 +1,207 @@
+/* Estilos Gerais */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    display: grid;
+    height: 230vh;
+    grid-template-columns: 1.1fr 1.1fr 1.1fr 0.6fr;
+    grid-template-rows: 0.1fr 0.5fr 0.5fr 0.9fr 0.9fr 0.9fr 1fr;
+    grid-template-areas: 
+        "Logo Logo Logo Logo"
+        "Noticia_Principal Noticia_Principal Noticia_Principal Anuncios"
+        "Noticia1 Nada_1 Noticia2 Anuncios"
+        "Noticia3 Noticia3 Nada_2 Anuncios"
+        "Noticia4 Noticia4 Nada_3 Anuncios"
+        "Noticia5 Noticia5 Nada_4 Anuncios"
+        "Footer Footer Footer Footer";
+    grid-gap: 0.8em;
+}
+
+/* Logo-Inicio */
+#Logo{
+    background-color: rgb(195, 3, 3);
+    grid-area: Logo;
+	padding: 20px;
+	text-align: center;
+
+}
+.logo-titulo {
+	padding: 10px;
+}
+h1_Logo{
+	color: #ffffff;
+	font-size: 2.5em;
+    
+}
+/* Logo-Final */
+
+/* Notícia Principal */
+#Noticia_Principal {
+    background-color: rgb(0, 34, 255);
+    grid-area: Noticia_Principal;
+    border-radius: 0.8em;
+    display: grid;
+    grid-template-columns: auto 0.5fr;
+    margin-left: 16px;
+}
+
+.grid-item img {
+    width: 50%;
+    height: auto;
+    border-radius: 10px;
+    object-fit: cover;
+    display: block;
+}
+
+h1 {
+    color: red;
+    font-size: 2em;
+    margin-top: 5%;
+    margin-right: 10%;
+}
+
+/* Anúncios */
+#Anuncios {
+    background-color: rgb(255, 0, 149);
+    grid-area: Anuncios;
+    border-radius: 0.8em;
+    display: flex;
+    margin-left: 15px;
+}
+
+/* Notícia Secundária */
+.noticia {
+    border-radius: 0.8em;
+    display: flex;
+    margin-left: 15px;
+}
+
+#Noticia1 {
+    background-color: rgb(0, 255, 98);
+    grid-area: Noticia1;
+    margin-left: 100px;
+}
+
+#Noticia2 {
+    background-color: rgb(166, 0, 255);
+    grid-area: Noticia2;
+    margin-right: 100px;
+}
+
+#Noticia3 {
+    background-color: rgb(105, 59, 129);
+    grid-area: Noticia3;
+}
+
+#Noticia4 {
+    background-color: rgb(255, 136, 0);
+    grid-area: Noticia4;
+}
+
+#Noticia5 {
+    background-color: rgb(0, 0, 0);
+    grid-area: Noticia5;
+}
+
+.grid-item-1 img, .grid-item-2 img, .grid-item-3 img, .grid-item-4 img, .grid-item-5 img {
+    width: 55%;
+    height: auto;
+    border-radius: 10px;
+    object-fit: cover;
+    display: block;
+}
+
+/* Imagem Container */
+.imagem-container {
+    overflow: hidden;
+    width: 320px;
+    height: 200px;
+    border-radius: 0.8em;
+}
+
+.imagem-container img {
+    width: 100%;
+    height: 100%;
+    transition: transform 0.3s ease;
+}
+
+.imagem-container:hover img {
+    transform: scale(1.1);
+}
+
+/* Footer */
+#Footer {
+    background-color: rgb(190, 7, 7);
+    grid-area: Footer;
+}
+
+/* Responsividade para tablets (largura máxima de 768px) */
+@media (max-width: 768px) {
+    .container {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto;
+        grid-template-areas: 
+            "Logo Logo"
+            "Noticia_Principal Noticia_Principal"
+            "Noticia1 Noticia2"
+            "Noticia3 Anuncios"
+            "Noticia4 Anuncios"
+            "Noticia5 Anuncios"
+            "Footer Footer";
+    }
+
+    #Logo {
+        text-align: center;
+    }
+
+    #Noticia_Principal {
+        grid-template-columns: 1fr;
+        margin-left: 0;
+    }
+
+    #Anuncios {
+        margin-left: 0;
+    }
+
+    h1 {
+        font-size: 1.5em;
+    }
+}
+
+/* Responsividade para celulares (largura máxima de 480px) */
+@media (max-width: 480px) {
+    .container {
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+            "Logo"
+            "Noticia_Principal"
+            "Noticia1"
+            "Noticia2"
+            "Noticia3"
+            "Noticia4"
+            "Noticia5"
+            "Anuncios"
+            "Footer";
+    }
+
+    #Noticia_Principal, #Anuncios, .noticia {
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    h1 {
+        font-size: 1.2em;
+    }
+
+    .imagem-container {
+        width: 100%;
+        height: auto;
+    }
+
+    .grid-item img {
+        width: 100%;
+    }
+}
